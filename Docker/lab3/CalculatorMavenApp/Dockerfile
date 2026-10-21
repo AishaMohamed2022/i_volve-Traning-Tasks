@@ -7,6 +7,8 @@ RUN groupadd -r appuser && useradd -r -g appuser -d /home/appuser -m appuser
 COPY --chown=appuser:appuser pom.xml .
 COPY --chown=appuser:appuser src ./src
 
+RUN chown -R appuser:appuser /app
+
 USER appuser
 
 RUN mvn clean package
