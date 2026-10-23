@@ -34,6 +34,7 @@ This repository demonstrates security scanning of Docker container images using 
 ```bash
 git clone https://github.com/Ibrahim-Adel15/TrivyImage.git
 cd TrivyImage
+```
 
 ### Step 2: Build the Baseline Image (trivy-lab:v1)
 
@@ -41,3 +42,16 @@ Build the initial image using the provided Dockerfile:
 
 ```bash
 docker build -t trivy-lab:v1 .
+docker images trivy-lab:v1
+```
+### Step 3: Install & Verify Trivy
+### Step 4: Vulnerability Scanning (trivy-lab:v1)  
+ ```bash
+trivy image trivy-lab:v1
+trivy image --severity HIGH,CRITICAL trivy-lab:v1
+```
+  ![وصف الصورة](screenshots/اسم-الملف.png)
+  
+
+  
+  
