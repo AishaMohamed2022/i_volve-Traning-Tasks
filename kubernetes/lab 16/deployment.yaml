@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ivolveapp
+  labels:
+    app: ivolveapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ivolveapp
+  template:
+    metadata:
+      labels:
+        app: ivolveapp
+    spec:
+      containers:
+      - name: ivolveapp-container
+        image: nginx:alpine
+        resources:
+          requests:
+            cpu: "1"         # 1 vCPU
+            memory: "1Gi"    # 1 Gibibyte
+          limits:
+            cpu: "2"         # 2 vCPUs
+            memory: "2Gi"    # 2 Gibibytes
