@@ -1,0 +1,15 @@
+---
+plugin: amazon.aws.aws_ec2
+regions:
+  - eu-north-1
+
+filters:
+  tag:server: ivolve
+  instance-state-name: running
+
+keyed_groups:
+  - prefix: tag
+    key: tags
+
+compose:
+  ansible_host: public_ip_address

@@ -1,0 +1,8 @@
+---
+- name: Deploy and Configure Secure MySQL on AWS EC2
+  hosts: tag_server_ivolve
+  become: yes
+  vars_files:
+    - roles/mysql/vars/vault.yml
+  roles:
+    - mysql
